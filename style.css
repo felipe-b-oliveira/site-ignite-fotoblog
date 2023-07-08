@@ -129,14 +129,33 @@ main h1 {
     overflow: hidden;
 }
 
+/* animation */
+
 .item img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+
+    /* transition-property: rotate;
+    transition: 0.4s;
+    transition-delay: 0;
+    transition-timing-function: ease-out; */
+
+    /* transition: filter 0.4s ease-in, transform 0.8s ease-out; */
+
+    transition: all 0.4s ease-out;
+}
+
+.item img:hover {
+    filter: hue-rotate(7deg) contrast(110%) saturate(200%);
+    transform: scale(1.2) rotate(-4deg);
 }
 
 .details {
     padding: 2.2rem;
+    background-color: var(--color-base-white);
+    z-index: 1;
+    position: relative;
 }
 
 .details h2 {
