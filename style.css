@@ -4,6 +4,13 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 :root {
@@ -38,4 +45,42 @@ body {
 main {
     overflow-y: scroll;
     background-color: var(--color-base-gray-100);
+}
+
+header,
+nav,
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 7.2rem;
+    font-weight: 700;
+}
+
+header form {
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 1.8rem;
+    color: var(--color-base-gray-300);
+}
+
+ul li.active {
+    color: var(--color-base-gray-900);
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
 }
