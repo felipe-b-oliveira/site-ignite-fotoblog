@@ -129,7 +129,7 @@ main h1 {
     overflow: hidden;
 }
 
-/* animation */
+/* img animation */
 
 .item img {
     width: 100%;
@@ -144,6 +144,8 @@ main h1 {
     /* transition: filter 0.4s ease-in, transform 0.8s ease-out; */
 
     transition: all 0.4s ease-out;
+
+    display: block;
 }
 
 .item img:hover {
@@ -180,4 +182,38 @@ footer p {
     text-align: center;
     padding: 1.6rem;
     font-weight: 600;
+}
+
+/* header and footer animation */
+
+header {
+    --startY: -100%;
+    animation: move .2s;
+}
+
+footer {
+    --startY: 100%;
+    animation: move .2s;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+.item {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }
